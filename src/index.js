@@ -1,9 +1,15 @@
 'use strict';
 const ejs = require('ejs');
+const moment = require('moment');
 const path = require('path');
 const fs = require('fs');
 const readPkgUp = require('read-pkg-up');
-
+const ObjectAssign = require("object.assign");
+const dateObject = {
+    year: moment().year(),
+    month: moment().month(),
+    day: moment().day()
+};
 const defaultOptions = {
     configPath: path.resolve(process.env.HOME || process.env.USERPROFILE, '.readme-genrc'),
     outputPath: path.resolve(process.cwd(), "README.md"),
@@ -17,7 +23,7 @@ module.exports = (cliOptions = {}) => {
         if (configPath && !fs.existsSync(configPath)) {
             return Promise.reject(new Error("Not found template: " + configPath));
         }
-        ejs.renderFile(configPath, result.pkg, (err, output) => {
+        ejs.renderFile(configPath, ObjectAssign({}, dateObject, result.pkg), (err, output) => {
             if (err) {
                 console.log(err);
             }

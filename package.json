@@ -42,7 +42,10 @@
   },
   "dependencies": {
     "ejs": "^2.4.1",
+    "log-symbols": "^1.0.2",
     "meow": "^3.7.0",
+    "moment": "^2.13.0",
+    "object.assign": "^4.0.3",
     "read-pkg-up": "^1.0.1"
   }
 }

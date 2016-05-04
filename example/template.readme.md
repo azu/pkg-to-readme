@@ -38,5 +38,5 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 ## License
 
-Copyright © <%= year() %> [<%= author.name %>](<%= author.url %>)
+Copyright © <%= year() %>-present [<%= author.name %>](<%= author.url %>)
 Licensed under the <%= license || licenses.join(', ') %> license.
