@@ -51,8 +51,7 @@ $ npm i -d && npm test
 
 ## License
 
-Copyright © 2016 azu
-Licensed under the MIT license.
+MIT © azu
 
 ## Thanks
 
