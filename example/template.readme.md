@@ -6,7 +6,7 @@
 
 Install with [npm](https://www.npmjs.com/):
 
-  npm install <%= name %>
+    npm install <%= name %>
 
 ## Usage
 
@@ -20,7 +20,7 @@ See [Releases page](<%= homepage %>/releases).
 
 Install devDependencies and Run `npm test`:
 
-  npm i -d && npm test
+    npm i -d && npm test
 
 ## Contributing
 
