@@ -6,7 +6,7 @@
 
 Install with [npm](https://www.npmjs.com/):
 
-  npm i <%= name %>
+  npm install <%= name %>
 
 ## Usage
 
