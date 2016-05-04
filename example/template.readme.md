@@ -6,9 +6,7 @@
 
 Install with [npm](https://www.npmjs.com/):
 
-```sh
-$ npm i <%= name %>
-```
+  npm i <%= name %>
 
 ## Usage
 
@@ -22,13 +20,12 @@ See [Releases page](<%= homepage %>/releases).
 
 Install devDependencies and Run `npm test`:
 
-```sh
-$ npm i -d && npm test
-```
+  npm i -d && npm test
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](<%= bugs.url %>)
+Pull requests and stars are always welcome.
+For bugs and feature requests, [please create an issue](<%= bugs.url %>).
 
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -38,5 +35,5 @@ Pull requests and stars are always welcome. For bugs and feature requests, [plea
 
 ## License
 
-Copyright © <%= year() %>-present [<%= author.name %>](<%= author.url %>)
+Copyright © <%= year %>-present <%= author.name %>.
 Licensed under the <%= license || licenses.join(', ') %> license.
