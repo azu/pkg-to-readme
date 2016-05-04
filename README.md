@@ -12,6 +12,24 @@ $ npm install pkg-to-readme -g
 
 ## Usage
 
+### from Command line
+
+```
+$ pkg-to-readme
+  
+  Options
+  -t, --template  Path to template file. default: ~/.readme-genrc
+  -o, --output    Path to output. default: ./README.md 
+```
+
+Example:
+
+```
+$ pkg-to-readme --template path/to/template.md --output path/to/README.md
+```
+
+### from Node.js
+
 ```js
 const pkg2readme = require('pkg-to-readme');
 readmeGen({
