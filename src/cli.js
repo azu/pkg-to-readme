@@ -11,15 +11,17 @@ const cli = meow(`
   Options
   -t, --template  Path to template file. default: ~/.readme-genrc
   -o, --output    Path to output. default: ./README.md 
+  -f, --force     Force update
 
 `, {
     alias: {
+        f: 'force',
         t: 'template',
         o: 'output'
     }
 });
 
-if (fs.existsSync(path.resolve('README.md'))) {
+if (!cli.flags.force && fs.existsSync(path.resolve('README.md'))) {
     console.log(logSymbols.error, 'README.md already exists');
 } else {
     pkg2readme(cli.flags).then(()=> {

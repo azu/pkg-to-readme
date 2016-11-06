@@ -16,10 +16,12 @@ $ npm install pkg-to-readme -g
 
 ```
 $ pkg-to-readme
-  
-  Options
-  -t, --template  Path to template file. default: ~/.readme-genrc
-  -o, --output    Path to output. default: ./README.md 
+
+Options
+-t, --template  Path to template file. default: ~/.readme-genrc
+-o, --output    Path to output. default: ./README.md 
+-f, --force     Force update
+
 ```
 
 Example:
