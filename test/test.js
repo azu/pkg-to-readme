@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import readmeGen from '../src/';
+import readmeGen from '../src/index.js';
 import tempfs from 'temp-fs';
-const assert = require("power-assert");
+import assert from "assert";
+
 describe("test", function () {
     let dir;
     beforeEach(function () {
