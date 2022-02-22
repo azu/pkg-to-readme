@@ -4,7 +4,6 @@ const moment = require('moment');
 const path = require('path');
 const fs = require('fs');
 const readPkgUp = require('read-pkg-up');
-const ObjectAssign = require("object.assign");
 const dateObject = {
     year: moment().year(),
     month: moment().month(),
@@ -18,12 +17,13 @@ const defaultOptions = {
 module.exports = (cliOptions = {}) => {
     const cwd = cliOptions.cwd ? cliOptions.cwd : defaultOptions.cwd;
     return readPkgUp({cwd: cwd}).then(result => {
+        const packageJson = result.packageJson;
         const configPath = cliOptions.template ? path.resolve(cwd, cliOptions.template) : defaultOptions.configPath;
         const outputPath = cliOptions.output ? path.resolve(cwd, cliOptions.output) : defaultOptions.outputPath;
         if (configPath && !fs.existsSync(configPath)) {
             return Promise.reject(new Error("Not found template: " + configPath));
         }
-        ejs.renderFile(configPath, ObjectAssign({}, dateObject, result.pkg), (err, output) => {
+        ejs.renderFile(configPath, Object.assign({}, dateObject, packageJson), (err, output) => {
             if (err) {
                 console.log(err);
             }
