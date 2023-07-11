@@ -1,15 +1,15 @@
 'use strict';
 import { readPackageUp } from "read-pkg-up";
 import path from "node:path";
-import moment from "moment";
 import fs from "node:fs";
 import ejs from "ejs";
 
+// creat dateObject using Pure Date
 const dateObject = {
-    year: moment().year(),
-    month: moment().month(),
-    day: moment().day()
-};
+    year: new Date().getFullYear(),
+    month: new Date().getMonth() + 1,
+    day: new Date().getDate()
+}
 const defaultOptions = {
     configPath: path.resolve(process.env.HOME || process.env.USERPROFILE, '.readme-genrc'),
     outputPath: path.resolve(process.cwd(), "README.md"),
