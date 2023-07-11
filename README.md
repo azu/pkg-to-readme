@@ -33,7 +33,7 @@ $ pkg-to-readme --template path/to/template.md --output path/to/README.md
 ### from Node.js
 
 ```js
-const pkg2readme = require('pkg-to-readme');
+import { pkg2readme } from "pkg-to-readme";
 readmeGen({
     cwd: __dirname,
     output: outputPath,
