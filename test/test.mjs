@@ -1,9 +1,11 @@
-import fs from 'fs';
-import path from 'path';
-import readmeGen from '../src/index.js';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import assert from "node:assert";
 import tempfs from 'temp-fs';
-import assert from "assert";
-
+import { pkg2readme } from '../src/index.js';
+// use fileURLToPath(import.meta.url) for work on windows
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 describe("test", function () {
     let dir;
     beforeEach(function () {
@@ -15,12 +17,12 @@ describe("test", function () {
     it("should create README", function () {
         const outputPath = path.join(dir.path, "actual.README.md");
         const expectedOutput = fs.readFileSync(path.join(__dirname, "./fixture/README.md"), 'utf8');
-        return readmeGen({
+        return pkg2readme({
             cwd: __dirname,
             output: outputPath,
             template: path.join(__dirname, "./fixture/README.ejs")
         }).then(() => {
-            assert.equal(fs.readFileSync(outputPath, 'utf8'), expectedOutput);
+            assert.strictEqual(fs.readFileSync(outputPath, 'utf8'), expectedOutput);
         });
     })
 });

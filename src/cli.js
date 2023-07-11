@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
-const meow = require('meow');
-const pkg2readme = require('./index.js');
+import fs from "node:fs";
+import path from "node:path";
+import meow from "meow";
+import { pkg2readme } from "./index.js";
+
 const cli = meow(`
   Usage
   $ pkg-to-readme
@@ -13,6 +14,7 @@ const cli = meow(`
   -f, --force     Force update
 
 `, {
+    importMeta: import.meta,
     alias: {
         f: 'force',
         t: 'template',
@@ -22,8 +24,9 @@ const cli = meow(`
 
 if (!cli.flags.force && fs.existsSync(path.resolve('README.md'))) {
     console.log('README.md already exists');
+    process.exit(1);
 } else {
-    pkg2readme(cli.flags).then(()=> {
+    pkg2readme(cli.flags).then(() => {
         console.log('successfully generated README.md');
     }).catch(error => {
         console.error(error.message, error.stack);

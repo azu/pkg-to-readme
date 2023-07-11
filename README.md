@@ -32,8 +32,10 @@ $ pkg-to-readme --template path/to/template.md --output path/to/README.md
 
 ### from Node.js
 
+pkg-to-readme is a pure esm module.
+
 ```js
-const pkg2readme = require('pkg-to-readme');
+import { pkg2readme } from "pkg-to-readme";
 readmeGen({
     cwd: __dirname,
     output: outputPath,
@@ -48,7 +50,7 @@ readmeGen({
 Install dev dependencies:
 
 ```sh
-$ npm i -d && npm test
+$ npm test
 ```
 
 ## License
