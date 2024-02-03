@@ -1,5 +1,5 @@
 'use strict';
-import { readPackageUp } from "read-pkg-up";
+import { readPackageUp } from "read-package-up";
 import path from "node:path";
 import fs from "node:fs";
 import ejs from "ejs";
