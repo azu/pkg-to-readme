@@ -15,7 +15,7 @@
     "src/",
     "lib/"
   ],
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Generate README.md from package.json",
   "type": "module",
   "main": "src/index.js",
